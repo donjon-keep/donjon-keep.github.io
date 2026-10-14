@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <radialGradient id="coin2" cx="35%" cy="28%" r="90%">
+      <stop offset="0%" stop-color="#ffe9a8"/><stop offset="45%" stop-color="#f6b73c"/><stop offset="100%" stop-color="#a3691a"/>
+    </radialGradient>
+  </defs>
+  <circle cx="128" cy="128" r="114" fill="url(#coin2)" stroke="#7c4f10" stroke-width="7"/>
+  <!-- base strata: the floor the keep stands on — rising bands, teal-to-glow -->
+  <rect x="46" y="188" width="164" height="10" rx="5" fill="#0f766e"/>
+  <rect x="52" y="172" width="152" height="10" rx="5" fill="#0d9488"/>
+  <rect x="60" y="156" width="136" height="10" rx="5" fill="#14b8a6"/>
+  <rect x="70" y="140" width="116" height="10" rx="5" fill="#2dd4bf"/>
+  <!-- DONJON = the castle keep (medieval: the main tower that can never fall) -->
+  <g fill="#241503">
+    <rect x="99" y="84" width="58" height="112" rx="6"/>
+    <rect x="89"  y="70" width="14" height="22" rx="3"/><rect x="107" y="64" width="14" height="28" rx="3"/>
+    <rect x="125" y="70" width="14" height="22" rx="3"/><rect x="143" y="64" width="14" height="28" rx="3"/>
+    <rect x="157" y="70" width="14" height="22" rx="3"/>
+    <rect x="93"  y="82" width="70" height="10" rx="3"/>
+  </g>
+  <rect x="118" y="98" width="20" height="26" rx="5" fill="url(#coin2)"/>
+  <rect x="93" y="104" width="10" height="10" rx="2" fill="url(#coin2)" opacity="0.85"/>
+  <rect x="153" y="104" width="10" height="10" rx="2" fill="url(#coin2)" opacity="0.85"/>
+  <!-- arched door = the gate, teal glow -->
+  <path d="M118 196 L138 196 L138 172 A10 10 0 0 0 118 172 Z" fill="#14b8a6"/>
+  <path d="M112 196 L144 196 L144 168 A16 16 0 0 0 112 168 Z" fill="#14b8a6" opacity="0.35"/>
+</svg>

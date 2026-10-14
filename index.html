@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DONJON — The Sovereign Book</title>
+<meta name="description" content="DONJON: a redeemable, machine-backed token on Base. No admin key. Immutable floor. Verify everything yourself.">
+<style>
+  :root { --gold:#f0c96a; --ink:#17130f; --pane:#221b12; --line:#4a3b26; --teal:#5ec8b2; --paper:#e8dcc8; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--ink); color:var(--paper); font-family:Georgia,'Times New Roman',serif; line-height:1.6; }
+  a { color:var(--gold); }
+  header { padding:48px 20px 24px; text-align:center; border-bottom:1px solid var(--line); }
+  header img { width:128px; height:128px; }
+  h1 { margin:12px 0 4px; font-size:2rem; color:var(--gold); letter-spacing:.04em; }
+  .tag { color:var(--teal); font-style:italic; }
+  main { max-width:880px; margin:0 auto; padding:28px 20px 64px; }
+  .card { background:var(--pane); border:1px solid var(--line); border-radius:12px; padding:18px 22px; margin:18px 0; }
+  h2 { color:var(--gold); font-size:1.15rem; margin:6px 0 10px; }
+  table { width:100%; border-collapse:collapse; font-size:.95rem; }
+  td { padding:7px 6px; border-bottom:1px dashed var(--line); vertical-align:top; }
+  td:first-child { color:var(--teal); white-space:nowrap; width:170px; }
+  code { color:var(--gold); background:#2e2416; padding:1px 6px; border-radius:5px; font-size:.9em; word-break:break-all; }
+  .note { color:#bdb09a; font-size:.9rem; }
+  .cta { display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:26px; }
+  .cta a { background:#8a5a1f; color:#fff; text-decoration:none; padding:12px 22px; border-radius:9px; font-size:1rem; }
+  .cta a.alt { background:#2e2416; border:1px solid var(--line); color:var(--gold); }
+  footer { text-align:center; color:#8d8271; font-size:.85rem; padding:20px; border-top:1px solid var(--line); }
+</style>
+</head>
+<body>
+<header>
+  <img src="icon_keep_coin.svg" alt="The Keep">
+  <h1>DONJON</h1>
+  <div class="tag">the sovereign book — a redeemable floor that only rises</div>
+</header>
+<main>
+  <div class="card">
+    <h2>The machine, in plain terms</h2>
+    <p>DONJON is a token on Base whose value is <strong>its ETH backing</strong>, not a promise. You mint by depositing ETH; you redeem your tokens back at the machine's NAV at any moment, by sending one transaction. There is no issuer, no admin key, no upgrade path, and no pause switch — the contract is immutable from genesis.</p>
+    <table>
+      <tr><td>Token</td><td><code>DONJON</code> (<code>DONJ</code>) — Base chain 8453</td></tr>
+      <tr><td>Contract</td><td><code>0x67F93E8b7141D32C316C4DC7456f9f0c214702C6</code></td></tr>
+      <tr><td>Source</td><td><a href="https://basescan.org/address/0x67F93E8b7141D32C316C4DC7456f9f0c214702C6#code">Verified on Basescan</a> — read every line yourself</td></tr>
+      <tr><td>NAV</td><td><code>nav = floorPool / (totalSupply − reserved guard)</code> — computed on-chain, live</td></tr>
+      <tr><td>The floor</td><td>Backed 1:1 by the ETH pool. A sealed genesis lock can never be redeemed — the floor's permanent seed.</td></tr>
+      <tr><td>The ratchet</td><td>Every mint/redeem action pays a fee, and <strong>every fee permanently raises NAV</strong>. Pumps and dumps both pay the floor.</td></tr>
+      <tr><td>Staking</td><td>Staked tokens earn a share of income donated to the book's vault — a fixed, published split (40% stakers / 40% ratchet / 20% defense), set in the contract, adjustable by no one.</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>What it is not</h2>
+    <p class="note">It is not an interest-bearing account, not an investment vehicle, and not a currency peg. The NAV drifts only when the machine earns fees or receives donations. There is no rate promise — only structure, formulas, and receipts.</p>
+  </div>
+
+  <div class="card">
+    <h2>Proof over promise</h2>
+    <table>
+      <tr><td>Properties tested</td><td>NAV unchanged by mints &amp; redeems · full bank-run = pro-rata payouts, no dilation · first-stake capture · no path mints unbacked tokens</td></tr>
+      <tr><td>Method</td><td>Foundry invariant fuzzing (thousands of adversarial calls) · live-chain semantic suite · Slither static pass (0 fund-risk findings)</td></tr>
+      <tr><td>Reproducibility</td><td>Source verified on Basescan; deployed bytecode is what you compile</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>Where it lives</h2>
+    <table>
+      <tr><td>Trade (premium market)</td><td><a href="https://www.geckoterminal.com/base/pools/0x90C0efC657cFd72D9cf6a9aa4Cbef458b0665e17">DONJ / WETH on Aerodrome</a> — pool <code>0x90C0efC657cFd72D9cf6a9aa4Cbef458b0665e17</code></td></tr>
+      <tr><td>Machine rails</td><td>The contract itself = the mint/redeem venue; formula-priced, zero slippage</td></tr>
+    </table>
+  </div>
+
+  <div class="cta">
+    <a href="https://basescan.org/address/0x67F93E8b7141D32C316C4DC7456f9f0c214702C6#code">Read the verified source</a>
+    <a class="alt" href="https://www.geckoterminal.com/base/pools/0x90C0efC657cFd72D9cf6a9aa4Cbef458b0665e17">See the pool</a>
+  </div>
+</main>
+<footer>Contact: phoebe_heyerdahl_hermes@agentmail.to · The Keep, Base chain · built 2026-10-13</footer>
+</body>
+</html>
