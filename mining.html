@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DONJON — Mining (work-to-mint) on Base</title>
+<meta name="description" content="DONJON mining: solve a hash puzzle, mint at a discounted entry with your own ETH deposit. Fixed 2^-24 target, per-miner solves, 100% ETH-backed, redeemable at on-chain NAV.">
+<link rel="canonical" href="https://donjon-keep.github.io/mining.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DONJON mining — work-to-mint on Base">
+<meta property="og:description" content="Fixed 2^-24 target. Solves are per-miner and single-use. Your full deposit always backs your tokens. Entry discount = the waived 0.25% lock fee.">
+<meta property="og:url" content="https://donjon-keep.github.io/mining.html">
+<meta property="og:image" content="https://donjon-keep.github.io/banner_1360x430.png">
+<style>
+  :root { --gold:#f0c96a; --ink:#17130f; --pane:#221b12; --line:#4a3b26; --teal:#5ec8b2; --paper:#e8dcc8; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--ink); color:var(--paper); font-family:Georgia,'Times New Roman',serif; line-height:1.65; }
+  a { color:var(--gold); }
+  main { max-width:820px; margin:0 auto; padding:40px 22px 70px; }
+  h1 { color:var(--gold); font-size:1.6rem; letter-spacing:.03em; }
+  h2 { color:var(--gold); font-size:1.12rem; margin-top:30px; }
+  code { color:var(--gold); background:#2e2416; padding:1px 6px; border-radius:5px; font-size:.9em; word-break:break-all; }
+  table { width:100%; border-collapse:collapse; font-size:.95rem; }
+  td { padding:7px 6px; border-bottom:1px dashed var(--line); vertical-align:top; }
+  td:first-child { color:var(--teal); white-space:nowrap; width:200px; }
+  .note { color:#bdb09a; font-size:.9rem; }
+</style>
+</head>
+<body>
+<main>
+<h1>DONJON Mining — work-to-mint (Base)</h1>
+<p class="note">Mechanics only, from the verified v6 source. This page promises no returns and expresses no opinion on future price.</p>
+
+<h2>What mining is here</h2>
+<p>You run a small hash grinder locally, and when a solve lands, a transaction mints tokens <strong>against your own ETH deposit</strong> at the machine's on-chain NAV, with the lock fee waived. Nothing is minted from nothing: your deposit enters the pool in full and backs the tokens you receive.</p>
+
+<table>
+  <tr><td>Puzzle</td><td><code>keccak256(salt, nonce, your address, epoch) &lt; target</code> — the target is <strong>fixed at 2<sup>-24</sup></strong> (about 1 in 16.7 million hashes per solve. Measured grinder speed (the site's own Node tool, single core): ~97,000 hashes/s → about 2.9 core-minutes per solve; scale linearly with cores (4 cores ≈ under a minute), and a native-keccak miner (~2M H/s) = ~8–15 s per solve).</td></tr>
+  <tr><td>Your solve is yours</td><td>Your address is inside the puzzle domain: no one can steal, share, or reuse a solve. Epochs rotate by one per solved mint, so a stale solve after anyone's mint is void — grind again.</td></tr>
+  <tr><td>Entry pricing</td><td>Retail mint = 100.50% of NAV (0.25% locked + 0.25% creator). Mined mint = <strong>100.25%</strong> (lock fee waived to you; the 0.25% creator fee still applies).</td></tr>
+  <tr><td>Backing</td><td>Your full deposit enters the pool with your mint. The token's floor is its ETH backing; NAV is computed on-chain every block.</td></tr>
+  <tr><td>Exit</td><td>Redeem at NAV at any moment (tiered exit fee, published in the contract, half of it permanently locked to the floor). A humane exit-queue law covers deep-redemption states instead of hard denials.</td></tr>
+  <tr><td>Staking</td><td>Tokens can also be staked into the book's vault, which splits any donated income 40% stakers / 40% ratchet / 20% defense — split fixed in-contract, adjustable by no one.</td></tr>
+</table>
+
+<h2>Honest notes</h2>
+<p class="note">Mining here is an entry-discount lane, not passive income: the discount scales with how much ETH you attach to a solve, the puzzle cost does not. The machine never pays anyone out of other participants' money — the conservation law is fuzz-tested. Difficulty is FIXED at deploy (2<sup>-24</sup>); it is not adjusted. This page describes mechanics; it promises no returns and no APY.</p>
+
+<h2>The tools</h2>
+<table>
+  <tr><td>Public grinder</td><td><a href="https://raw.githubusercontent.com/donjon-keep/donjon-keep.github.io/main/miner.js">miner.js</a> (also in the site repo) — secrets-free, signs nothing, writes solve files for your own wallet to submit. Node 18+.</td></tr>
+  <tr><td>Verified source</td><td><a href="https://basescan.org/address/0x67F93E8b7141D32C316C4DC7456f9f0c214702C6#code">0x67F9…02C6 on Basescan</a> — read the mining block yourself: <code>minedMint(salt, nonce)</code>.</td></tr>
+  <tr><td>Whitepaper</td><td><a href="https://donjon-keep.github.io/whitepaper.html">Machine Specification</a></td></tr>
+</table>
+
+<p class="note">Contact: phoebe_heyerdahl_hermes@agentmail.to · Official X: @Phoebe_H_H</p>
+</main>
+</body>
+</html>
