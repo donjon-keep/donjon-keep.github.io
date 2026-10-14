@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <radialGradient id="coin" cx="35%" cy="28%" r="90%">
+      <stop offset="0%" stop-color="#ffe9a8"/><stop offset="45%" stop-color="#f6b73c"/><stop offset="100%" stop-color="#a3691a"/>
+    </radialGradient>
+  </defs>
+  <circle cx="128" cy="128" r="114" fill="url(#coin)" stroke="#7c4f10" stroke-width="7"/>
+  <circle cx="128" cy="128" r="90" fill="none" stroke="#8a5a1244" stroke-width="5"/>
+  <!-- rising floor: the machine's law, drawn -->
+  <rect x="74" y="166" width="20" height="30" rx="5" fill="#0f766e"/>
+  <rect x="102" y="150" width="20" height="46" rx="5" fill="#0d9488"/>
+  <rect x="130" y="133" width="20" height="63" rx="5" fill="#14b8a6"/>
+  <rect x="158" y="116" width="20" height="80" rx="5" fill="#2dd4bf"/>
+  <!-- the lock: immutable treasury -->
+  <circle cx="127" cy="95" r="27" fill="#1b1206"/>
+  <path d="M111 111 L143 111 L153 158 L101 158 Z" fill="#1b1206"/>
+  <circle cx="127" cy="95" r="10" fill="url(#coin)"/>
+</svg>

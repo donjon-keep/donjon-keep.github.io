@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <!-- THE FLOOR KNIGHT: Doge has the dog. DONJON has the knight who cannot fall. -->
+  <defs>
+    <linearGradient id="steel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8fa3c0"/><stop offset="100%" stop-color="#4a5a75"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="128" cy="242" rx="78" ry="9" fill="#00000055"/>
+  <!-- body -->
+  <rect x="86" y="150" width="84" height="86" rx="20" fill="url(#steel)"/>
+  <rect x="102" y="170" width="52" height="50" rx="12" fill="#f6b73c"/>
+  <circle cx="128" cy="192" r="13" fill="#1b1206"/>
+  <path d="M119 201 L137 201 L142 224 L114 224 Z" fill="#1b1206"/>
+  <!-- helmet -->
+  <rect x="88" y="44" width="80" height="86" rx="34" fill="url(#steel)"/>
+  <rect x="99" y="92" width="58" height="18" rx="9" fill="#0e131c"/>
+  <rect x="106" y="96" width="16" height="9" rx="4" fill="#5eead4"/>
+  <rect x="134" y="96" width="16" height="9" rx="4" fill="#5eead4"/>
+  <!-- plume -->
+  <path d="M128 44 C118 10 146 10 140 30 C154 16 160 34 142 44 Z" fill="#14b8a6"/>
+  <!-- arms: one holds the rising-floor chart -->
+  <rect x="52" y="152" width="30" height="16" rx="8" fill="url(#steel)"/>
+  <rect x="174" y="152" width="30" height="16" rx="8" fill="url(#steel)"/>
+  <!-- pick over shoulder -->
+  <rect x="150" y="66" width="9" height="92" rx="4" fill="#241503" transform="rotate(18 154 112)"/>
+  <path d="M170 60 Q196 40 208 72 Q188 58 176 72 Z" fill="#a3691a"/>
+  <!-- chart in the other hand -->
+  <polyline points="50,196 66,178 82,186 96,158" fill="none" stroke="#2dd4bf" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- feet -->
+  <rect x="92" y="232" width="30" height="14" rx="7" fill="#241503"/>
+  <rect x="134" y="232" width="30" height="14" rx="7" fill="#241503"/>
+</svg>
